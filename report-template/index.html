@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>UI Coverage Heatmap</title>
+  <link rel="stylesheet" href="assets/app.css" />
+</head>
+<body class="index-view">
+  <header class="app-header">
+    <div class="app-header__brand">
+      <span class="app-header__logo" aria-hidden="true">▣</span>
+      <h1>UI Coverage Heatmap</h1>
+    </div>
+    <div class="app-header__meta" id="summary"></div>
+  </header>
+
+  <div class="legend-bar">
+    <span class="legend-item"><span class="pwhm-swatch pwhm-red"></span>0 interactions</span>
+    <span class="legend-item"><span class="pwhm-swatch pwhm-orange"></span>1–2 interactions</span>
+    <span class="legend-item"><span class="pwhm-swatch pwhm-green"></span>3+ interactions</span>
+  </div>
+
+  <main class="pages-grid" id="pages-grid"></main>
+
+  <footer class="app-footer">
+    <span id="generated-at"></span>
+    <span>·</span>
+    <span>pw-ui-heatmap</span>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

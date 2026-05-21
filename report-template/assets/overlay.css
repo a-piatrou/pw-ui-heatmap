@@ -1,0 +1,106 @@
+.pwhm-box {
+  position: absolute;
+  pointer-events: auto;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  transition: box-shadow 0.1s ease;
+  background: transparent;
+}
+
+.pwhm-box:hover {
+  box-shadow: 0 0 0 2px rgba(91, 141, 239, 0.4), 0 0 12px rgba(91, 141, 239, 0.25);
+  z-index: 10;
+}
+
+.pwhm-box.pwhm-red {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.pwhm-box.pwhm-orange {
+  border-color: #f59e0b;
+  background: rgba(245, 158, 11, 0.05);
+}
+
+.pwhm-box.pwhm-green {
+  border-color: #10b981;
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.pwhm-box.pwhm-hidden {
+  display: none;
+}
+
+.pwhm-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: #1c2030;
+  color: #e6e9ef;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  border: 2px solid;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  white-space: nowrap;
+}
+
+.pwhm-box.pwhm-red .pwhm-badge { border-color: #ef4444; color: #fca5a5; }
+.pwhm-box.pwhm-orange .pwhm-badge { border-color: #f59e0b; color: #fcd34d; }
+.pwhm-box.pwhm-green .pwhm-badge { border-color: #10b981; color: #6ee7b7; }
+
+.tooltip {
+  position: fixed;
+  background: #1c2030;
+  color: #e6e9ef;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #2a2f3d;
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  z-index: 1000;
+  max-width: 320px;
+  line-height: 1.5;
+}
+
+.tooltip__title {
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #fff;
+}
+
+.tooltip__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: #cdd3df;
+}
+
+.tooltip__row code {
+  font-family: ui-monospace, 'SF Mono', monospace;
+  font-size: 11px;
+  color: #9aa3b2;
+}
+
+.tooltip__divider {
+  height: 1px;
+  background: #2a2f3d;
+  margin: 6px 0;
+}
+
+.tooltip__tests {
+  color: #9aa3b2;
+  font-style: italic;
+  font-size: 11px;
+}

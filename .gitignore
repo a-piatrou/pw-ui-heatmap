@@ -1,0 +1,17 @@
+node_modules/
+dist/
+*.log
+.DS_Store
+.env
+.env.local
+
+heatmap-report/
+playwright-report/
+test-results/
+.pwhm-tmp/
+
+examples/**/node_modules/
+examples/**/test-results/
+examples/**/playwright-report/
+examples/**/heatmap-report/
+examples/**/verify-*.png

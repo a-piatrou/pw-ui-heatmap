@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm test *)",
+      "Bash(npx playwright *)",
+      "Bash(rm -rf node_modules examples/playwright-app/node_modules)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); [print\\(p['identity']['name'], '/', p['identity']['urlTemplate'], '— id', p['identity']['id'], '— elements:', len\\(p['elements']\\), '— interactions:', sum\\(e['total'] for e in p['elements']\\), '— coverage:', round\\(p['coverage']*100,1\\), '%'\\) for p in d['pages']]; print\\('summary:', d['summary']\\)\")",
+      "Bash(python -c \"import json; d=json.load\\(open\\('tests/heatmap-report/data.json',encoding='utf-8'\\)\\); p=[p for p in d['pages'] if p['identity']['name']=='/users'][0]; print\\('Candidates:'\\); [print\\(' ', c['pwhmId'], c['tag'], c['label']\\) for c in p['snapshot']['candidates']]; print\\('Elements \\(interacted\\):'\\); [print\\(' ', e['pwhmId'], 'total=', e['total'], 'actions=', e['byAction']\\) for e in p['elements'] if e['total']>0]\")",
+      "Bash(python -c \"import json; d=json.load\\(open\\('tests/heatmap-report/data.json',encoding='utf-8'\\)\\); [print\\(p['identity']['name'], '— template:', p['identity']['urlTemplate'], '— elements:', len\\(p['elements']\\), '— total interactions:', sum\\(e['total'] for e in p['elements']\\), '— coverage:', round\\(p['coverage']*100,1\\), '%'\\) for p in d['pages']]; print\\('summary:', d['summary']\\)\")",
+      "Bash(python -c ' *)",
+      "Bash(PYTHONIOENCODING=utf-8 python -c ' *)",
+      "Bash(node ../../dist/cli.js serve heatmap-report -p 4747 --no-open)",
+      "Bash(curl -s -o /dev/null -w \"index %{http_code}\\\\n\" http://127.0.0.1:4747/)",
+      "Bash(curl -s -o /dev/null -w \"data %{http_code}\\\\n\" http://127.0.0.1:4747/data.json)",
+      "Bash(curl -s -o /dev/null -w \"page %{http_code}\\\\n\" http://127.0.0.1:4747/pages/85f437149acc/index.html)",
+      "Bash(curl -s -o /dev/null -w \"snapshot %{http_code}\\\\n\" http://127.0.0.1:4747/pages/85f437149acc/snapshot.html)",
+      "Bash(curl -s -o /dev/null -w \"screenshot %{http_code}\\\\n\" http://127.0.0.1:4747/pages/85f437149acc/screenshot.png)",
+      "Bash(curl -s http://127.0.0.1:4747/data.json)",
+      "Bash(python -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('pages:', [p['identity']['name'] for p in d['pages']]\\); print\\('summary:', d['summary']\\)\")",
+      "Bash(curl -s http://127.0.0.1:4747/pages/85f437149acc/index.html)",
+      "Bash(REPORT_URL=http://127.0.0.1:4747 node verify-report.mjs)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://127.0.0.1:4747/)",
+      "Bash(curl -s http://127.0.0.1:4747/assets/overlay.js)",
+      "Bash(curl -s \"http://127.0.0.1:4747/pages/85f437149acc/snapshot.html\")",
+      "Bash(curl -s \"http://127.0.0.1:4747/pages/85f437149acc/index.html\")",
+      "Bash(curl -s \"http://127.0.0.1:4747/assets/overlay.js\")",
+      "Bash(node --check /tmp/overlay-test.js)",
+      "Bash(taskkill /F /IM node.exe /FI \"WINDOWTITLE eq pw-ui-heatmap*\")",
+      "Bash(ps -W)"
+    ]
+  }
+}

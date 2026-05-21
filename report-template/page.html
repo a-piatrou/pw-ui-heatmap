@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{{PAGE_NAME}} · UI Coverage Heatmap</title>
+  <link rel="stylesheet" href="../../assets/app.css" />
+  <link rel="stylesheet" href="../../assets/overlay.css" />
+</head>
+<body class="page-view">
+  <header class="app-header app-header--page">
+    <a class="back-link" href="../../index.html">← All pages</a>
+    <h2 id="page-title">{{PAGE_NAME}}</h2>
+    <div class="app-header__meta" id="page-meta"></div>
+  </header>
+
+  <div class="legend-bar">
+    <span class="legend-item"><span class="pwhm-swatch pwhm-red"></span>0 interactions</span>
+    <span class="legend-item"><span class="pwhm-swatch pwhm-orange"></span>1–2 interactions</span>
+    <span class="legend-item"><span class="pwhm-swatch pwhm-green"></span>3+ interactions</span>
+    <label class="legend-toggle">
+      <input type="checkbox" id="toggle-candidates" checked />
+      Show uncovered candidates
+    </label>
+  </div>
+
+  <div id="error-banner" class="error-banner" hidden></div>
+
+  <div class="iframe-stack" id="iframe-stack">
+    <iframe
+      id="snapshot-frame"
+      src="./snapshot.html"
+      sandbox="allow-same-origin"
+      title="Page snapshot"
+    ></iframe>
+    <div id="overlay-container" class="overlay-container" aria-hidden="true"></div>
+  </div>
+
+  <div class="tooltip" id="tooltip" hidden></div>
+
+  <script>
+    window.__pwhmPageId = "{{PAGE_ID}}";
+    window.__pwhmThresholds = {{THRESHOLDS_JSON}};
+  </script>
+  <script src="../../assets/overlay.js"></script>
+</body>
+</html>
