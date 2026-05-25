@@ -1,0 +1,15 @@
+src/
+examples/
+tests/
+.github/
+tsconfig.json
+tsup.config.ts
+vitest.config.ts
+.gitignore
+.editorconfig
+*.test.ts
+*.test.js
+.pwhm-tmp/
+heatmap-report/
+playwright-report/
+test-results/

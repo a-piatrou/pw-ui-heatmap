@@ -1,0 +1,77 @@
+{
+  "name": "pw-ui-heatmap",
+  "version": "0.1.0",
+  "description": "Post-run UI coverage heatmap reporter for Playwright tests. Shows every interacted element with a counter badge and a colored outline (red/orange/green) on top of the captured page DOM.",
+  "keywords": [
+    "playwright",
+    "test",
+    "reporter",
+    "ui",
+    "coverage",
+    "heatmap",
+    "e2e"
+  ],
+  "license": "MIT",
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/pw-ui-heatmap"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./reporter": {
+      "types": "./dist/reporter.d.ts",
+      "import": "./dist/reporter.js",
+      "require": "./dist/reporter.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "pw-ui-heatmap": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "report-template",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:e2e": "cd examples/playwright-app && npx playwright test",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "mime": "^4.0.4",
+    "nanoid": "^5.0.7",
+    "open": "^10.1.0",
+    "sirv": "^2.0.4"
+  },
+  "peerDependencies": {
+    "@playwright/test": ">=1.40.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.10.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.0",
+    "vitest": "^2.1.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

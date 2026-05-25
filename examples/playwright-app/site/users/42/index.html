@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Alice Adams · Demo</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="container">
+    <a class="back" href="/users">← Back to users</a>
+    <h1>User Detail</h1>
+    <dl>
+      <dt><strong>Name</strong></dt>
+      <dd id="user-name">Alice Adams</dd>
+      <dt><strong>Email</strong></dt>
+      <dd id="user-email">alice@demo.test</dd>
+      <dt><strong>Role</strong></dt>
+      <dd><span class="badge">admin</span></dd>
+    </dl>
+    <div style="display: flex; gap: 8px; margin-top: 16px">
+      <button id="edit-btn">Edit</button>
+      <button id="delete-btn" style="background: #ef4444">Delete</button>
+      <button id="reset-pw-btn" style="background: #718096">Reset password</button>
+    </div>
+  </div>
+</body>
+</html>
